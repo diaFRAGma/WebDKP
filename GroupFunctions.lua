@@ -80,17 +80,46 @@ function WebDKP_UpdateTable()
 			line:Show();
 			nameText:SetText(entries[index][1]);
 			-- Klassenbezeichnungen werden ins deutsche übersetzt
-			if entries[index][2] == "Druid" then entries[index][2] = "Druide" end
-			if entries[index][2] == "Hunter" then entries[index][2] = "Jäger" end
-			if entries[index][2] == "Mage" then entries[index][2] = "Magier" end
-			if entries[index][2] == "Rogue" then entries[index][2] = "Schurke" end
-			if entries[index][2] == "Shaman" then entries[index][2] = "Schamane" end
-			if entries[index][2] == "Paladin" then entries[index][2] = "Paladin" end
-			if entries[index][2] == "Priest" then entries[index][2] = "Priester" end
-			if entries[index][2] == "Warrior" then entries[index][2] = "Krieger" end
-			if entries[index][2] == "Warlock" then entries[index][2] = "Hexenmeister" end
+			if entries[index][2] == "Druid" then
+				nameText:SetVertexColor(1.00,0.49,0.04)
+				entries[index][2] = "Druide"
+			end
+			if entries[index][2] == "Hunter" then
+				nameText:SetVertexColor(0.67,0.83,0.45)
+				entries[index][2] = "Jäger"
+			end
+			if entries[index][2] == "Mage" then
+				nameText:SetVertexColor(0.41,0.80,0.94)
+				entries[index][2] = "Magier"
+			end
+			if entries[index][2] == "Rogue" then
+				nameText:SetVertexColor(1.00,0.96,0.41)
+				entries[index][2] = "Schurke"
+			end
+			if entries[index][2] == "Shaman" then
+				nameText:SetVertexColor(0.00,0.44,0.87)
+				entries[index][2] = "Schamane"
+			end
+			if entries[index][2] == "Paladin" then
+				nameText:SetVertexColor(0.96,0.55,0.73)
+				entries[index][2] = "Paladin"
+			end
+			if entries[index][2] == "Priest" then
+				nameText:SetVertexColor(1.00,1.00,1.00)
+				entries[index][2] = "Priester"
+			end
+			if entries[index][2] == "Warrior" then
+				nameText:SetVertexColor(0.78,0.61,0.43)
+				entries[index][2] = "Krieger" 
+			end
+			if entries[index][2] == "Warlock" then
+				nameText:SetVertexColor(0.58,0.51,0.79)
+				entries[index][2] = "Hexenmeister" 
+			end
 			classText:SetText(entries[index][2]);
+			classText:SetVertexColor(1.00,0.82,0.00)
 			dkpText:SetText(entries[index][3]);
+			dkpText:SetVertexColor(1.00,0.82,0.00)
 			--tierText:SetText(entries[index][4]);
 			-- kill the background of this line if it is not selected
 			if( not WebDKP_DkpTable[playerName]["Selected"] ) then

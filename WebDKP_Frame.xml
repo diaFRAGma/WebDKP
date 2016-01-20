@@ -322,7 +322,7 @@
           </Anchor>
         </Anchors>
         <Size>
-          <AbsDimension x="102" y="24"/>
+          <AbsDimension x="103" y="24"/>
         </Size>
         <Scripts>
           <OnClick>

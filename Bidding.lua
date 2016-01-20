@@ -283,12 +283,12 @@ function WebDKP_Bid_Event()
 			
 			
 		-- THEY WANT THE BIDDING TO START
-		elseif(string.find(string.lower(trigger), "#startebieten")==1 ) then
+		elseif(string.find(string.lower(trigger), "#s")==1 ) then
 		
 			if (WebDKP_bidInProgress == true ) then
 				WebDKP_SendWhisper(name,"Es wird bereits für ein Item geboten. - Du kannst kein weiteres Gebot starten solange noch eins läuft.");
 			elseif ( cmd == "" or cmd == nil) then
-				WebDKP_SendWhisper(name,"Du musst ein Item angeben auf das geboten werden soll. Beispiel: #startebieten [Blutfanghose]");
+				WebDKP_SendWhisper(name,"Du musst ein Item angeben auf das geboten werden soll. Beispiel: #s [Blutfanghose]");
 			else	
 				WebDKP_Bid_StartBid(cmd,subcmd);
 				WebDKP_BidFrameBidButton:SetText("Bieten beenden");
@@ -313,7 +313,7 @@ end
 -- ================================
 function WebDKP_IsBidChat(name, trigger)
 	if ( string.find(string.lower(trigger), "#biete" )== 1 or
-		 string.find(string.lower(trigger), "#startebieten" ) == 1 or 
+		 string.find(string.lower(trigger), "#s" ) == 1 or 
 		 string.find(string.lower(trigger), "#stoppebieten" ) == 1
 		) then
         return true

@@ -5,13 +5,16 @@ Die Befehle wurden aber nicht nur eingedeutscht sonder auch von ! in # geändert,
 
 TODO:
 - Gebote nur per Raidchat zulassen. Momentan kann auch per whisper geboten werden.
-- Befehl für den Gebotsstart verkürzen. #startebieten [Item] ist zu lang. #s
 - Wenn ein Itemlink als Loot vergeben wird, dann erscheint diser so in der Tabelle. Hier sollte nur der Itemname erscheinen.
 - Autofill Funktion testen.
+- Eventuell die Gilde auslesen und anzeigen. Kann leider beim Sync nicht übertragen werden. Aber zumindest im Raid könnte man es sich evtl. anzeigen lassen.
+- Die Optionen für die Position an der Minimap und andere Einstellungen in einer eigenen SavedVariable speichern, damit die Daten beim Synchronisieren nicht immer verloren gehen.
 
 Erledigt:
 - Tier Spalte entfernen.
 - Klassenbezeichnungen in der Tabelle eindeutschen
+- Befehl für den Gebotsstart verkürzen. #startebieten [Item] ist zu lang. #s
+- Klassenfarben in der Tabelle nutzen.
 
 Nützliche Links:
 World of Warcraft 1.12.1 API
