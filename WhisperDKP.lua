@@ -33,12 +33,12 @@ function WebDKP_WhisperDKP_Event()
 	local trigger = arg1;
 	if ( WebDKP_IsWebDKPWhisper(name, trigger) ) then
 		-- its a valid whisper for us. Now to determine what type of whisper
-		if(string.find(string.lower(trigger), "!dkp")==1 ) then		-- THEY WANT THEIR DKP
+		if(string.find(string.lower(trigger), "#dkp")==1 ) then		-- THEY WANT THEIR DKP
 			-- look up this player in our dkp table and see if we can find their information
 			
 			if ( WebDKP_DkpTable[name] == nil ) then
 				-- not in our system, send them message
-				WebDKP_SendWhisper(name,"You have no DKP history"); 
+				WebDKP_SendWhisper(name,"Du hast keine DKP Historie."); 
 			else
 				-- they are here, get them their dkp
 				local dkp = WebDKP_DkpTable[name]["dkp_"..tableid];
@@ -49,30 +49,28 @@ function WebDKP_WhisperDKP_Event()
 				if(dkp == 0 ) then
 					tier = 0;
 				end
-				WebDKP_SendWhisper(name,"Current DKP - "..dkp); 
-				WebDKP_SendWhisper(name,"Tier - "..tier); 
+				WebDKP_SendWhisper(name,"Du hast "..dkp.." DKP.");
+				--WebDKP_SendWhisper(name,"Tier - "..tier); 
 			end	
-		elseif(string.find(string.lower(trigger), "!listall")==1 ) then -- THEY WANT _ALL_ THE DKP OF EVERYONE
+		elseif(string.find(string.lower(trigger), "#listealle")==1 ) then -- THEY WANT _ALL_ THE DKP OF EVERYONE
 			local filter = WebDKP_GetWhisperFiltersFromMessage(trigger);
-			WebDKP_SendWhisper(name,"DKP List");
-			WebDKP_SendWhisper(name,"DKP - Tier Name(Class) ");
-			WebDKP_SendWhisper(name,"==============================");
+			WebDKP_SendWhisper(name,"DKP - Name(Klasse)");
+			WebDKP_SendWhisper(name,"========================");
 			WebDKP_WhisperSortedList(name,false,filter);
-		elseif(string.find(string.lower(trigger), "!list")==1 ) then  -- THEY WANT THE DKP OF PEOPLE IN THE CURRENT GROUP
+		elseif(string.find(string.lower(trigger), "#liste")==1 ) then  -- THEY WANT THE DKP OF PEOPLE IN THE CURRENT GROUP
 			local filter = WebDKP_GetWhisperFiltersFromMessage(trigger);
-			WebDKP_SendWhisper(name,"DKP List");
-			WebDKP_SendWhisper(name,"DKP - Tier Name(Class) ");
-			WebDKP_SendWhisper(name,"==============================");
+			WebDKP_SendWhisper(name,"DKP - Name (Klasse)");
+			WebDKP_SendWhisper(name,"========================");
 			WebDKP_WhisperSortedList(name,true,filter);
-		elseif(trigger == "!help" ) then		-- THEY WANT HELP / LIST OF COMMANDS
-			WebDKP_SendWhisper(name,"Available Commands:"); 
-			WebDKP_SendWhisper(name,"!dkp - Get your current dkp");
-			WebDKP_SendWhisper(name,"!list - List dkp of group");
-			WebDKP_SendWhisper(name,"!listall - List dkp of guild (BIG)");   
-			WebDKP_SendWhisper(name,"!help - This menu"); 
-			WebDKP_SendWhisper(name,"Limit lists by appending class names after them."); 
-			WebDKP_SendWhisper(name,"Example: '!list hunter' will only list hunters"); 
-			WebDKP_SendWhisper(name,"Example: '!list hunter rogue' will only list hunters and rogues"); 
+		elseif(trigger == "#hilfe" ) then		-- THEY WANT HELP / LIST OF COMMANDS
+			WebDKP_SendWhisper(name,"Mögliche Befehle:"); 
+			WebDKP_SendWhisper(name,"#dkp - Gibt deine aktuellen DKP aus.");
+			WebDKP_SendWhisper(name,"#liste - Gibt die DKP der aktuellen Gruppe aus.");
+			WebDKP_SendWhisper(name,"#listealle - Liste aller im DKP-System geführten Spieler.");
+			WebDKP_SendWhisper(name,"#hilfe - Diese Hilfe"); 
+			WebDKP_SendWhisper(name,"Du kannst die Listen filtern indem du die Klasse anhängst."); 
+			WebDKP_SendWhisper(name,"Beispiel: '#liste Jäger' Gibt nur alle Jäger aus."); 
+			WebDKP_SendWhisper(name,"Beispiel: '#liste Jäger Schurke' Gibt alle Jäger und Schurken aus."); 
 		end
 	end
 end
@@ -113,9 +111,9 @@ function WebDKP_IsWebDKPWhisper(name, trigger)
 	if ( string.find(string.lower(trigger), "WebDKP:" ) ) then
 		return false;
 	end
-	if ( string.find(string.lower(trigger), "!dkp" )==1 or
-		 string.find(string.lower(trigger), "!help")==1 or
-		 string.find(string.lower(trigger), "!list")==1
+	if ( string.find(string.lower(trigger), "#dkp" )==1 or
+		 string.find(string.lower(trigger), "#hilfe")==1 or
+		 string.find(string.lower(trigger), "#liste")==1
 		) then
         return true
     end
@@ -174,7 +172,18 @@ function WebDKP_WhisperSortedList(toPlayer, limitToGroup, classFilter)
 	for k, v in pairs(tableToWhisper) do
 		if ( type(v) == "table" ) then
 			if( v[1] ~= nil and v[2] ~= nil and v[3] ~= nil) then
-				WebDKP_SendWhisper(toPlayer,v[3].." - Tier "..v[4].." "..v[1].." ( "..v[2].." ) "); 
+				--WebDKP_SendWhisper(toPlayer,v[3].." - Tier "..v[4].." "..v[1].." ( "..v[2].." ) ");
+				-- Klassenbezeichnungen werden ins deutsche übersetzt
+				if v[2] == "Druid" then v[2] = "Druide" end
+				if v[2] == "Hunter" then v[2] = "Jäger" end
+				if v[2] == "Mage" then v[2] = "Magier" end
+				if v[2] == "Rogue" then v[2] = "Schurke" end
+				if v[2] == "Shaman" then v[2] = "Schamane" end
+				if v[2] == "Paladin" then v[2] = "Paladin" end
+				if v[2] == "Priest" then v[2] = "Priester" end
+				if v[2] == "Warrior" then v[2] = "Krieger" end
+				if v[2] == "Warlock" then v[2] = "Hexenmeister" end
+				WebDKP_SendWhisper(toPlayer,v[3].." - "..v[1].." ("..v[2]..")");
 			end
 		end
 	end
@@ -210,15 +219,15 @@ end
 -- ================================
 function WebDKP_GetWhisperFiltersFromMessage(message)
 	local filter = {}; 
-	filter["druid"] = string.find(string.lower(message), "druid");
-	filter["hunter"] = string.find(string.lower(message), "hunter");
-	filter["mage"]= string.find(string.lower(message), "mage");
-	filter["rogue"] = string.find(string.lower(message), "rogue");
-	filter["shaman"] = string.find(string.lower(message), "shaman");
+	filter["druid"] = string.find(string.lower(message), "druide");
+	filter["hunter"] = string.find(string.lower(message), "jäger");
+	filter["mage"]= string.find(string.lower(message), "magier");
+	filter["rogue"] = string.find(string.lower(message), "schurke");
+	filter["shaman"] = string.find(string.lower(message), "schamane");
 	filter["paladin"] = string.find(string.lower(message), "paladin");
-	filter["priest"] = string.find(string.lower(message), "priest");
-	filter["warrior"] = string.find(string.lower(message), "warrior");
-	filter["warlock"] = string.find(string.lower(message), "warlock");
+	filter["priest"] = string.find(string.lower(message), "priester");
+	filter["warrior"] = string.find(string.lower(message), "krieger");
+	filter["warlock"] = string.find(string.lower(message), "hexenmeister");
 	
 	-- If no filters were passed, everything should be nill. In that case
 	-- just display everyone

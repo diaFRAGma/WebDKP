@@ -11,19 +11,19 @@
 -- awards you just need to edit these strings. 
 -- Do display a new line in your message use \n. 
 
-WebDKP_ItemAward =			"WebDKP: $player awarded $item for: $cost dkp.";
+WebDKP_ItemAward =			"WebDKP: $player bekommt $item für: $cost DKP.";
 
-WebDKP_ItemAwardZeroSum =	"WebDKP: $dkp awarded to all players for ZeroSum";
+WebDKP_ItemAwardZeroSum =	"WebDKP: Alle Spieler erhalten $dkp DKP für ZeroSum.";
 
-WebDKP_DkpAwardAll =		"WebDKP: $dkp dkp given to all players for: $reason.";
+WebDKP_DkpAwardAll =		"WebDKP: Alle Spieler erhalten $dkp DKP für: $reason.";
 
-WebDKP_DkpAwardSome =		"WebDKP: $dkp dkp given to the following players: for $reason.";
+WebDKP_DkpAwardSome =		"WebDKP: Folgende Spieler bekommen $dkp DKP für: $reason.";
 
-WebDKP_BidStart =			"WebDKP: Bidding has started on $item! $time " ..
-							"To place a bid say !bid <value> in a raid/party/whisper. "..
-							"(ex: !bid 50)";
-
-WebDKP_BidEnd =				"WebDKP: Bidding has ended for $item";
+WebDKP_BidStart =			"WebDKP: Bieten wurde gestartet für $item! $time " ..
+							"Um ein Gebot abzugeben schreibe #biete <Wert> im Raidchat."..
+							"(z.B.: #biete 50)";
+							
+WebDKP_BidEnd =				"WebDKP: Das Bieten für $item wurde beendet.";
 
 -- ================================
 -- Returns the location where notifications should be sent to. 

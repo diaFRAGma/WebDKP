@@ -199,12 +199,12 @@ end
 function WebDKP_Options_Autofill_DropDown_Init()
 	local info;
 	local selected = "";
-	WebDKP_AddAutofillChoice("Gray Items",-1);
-	WebDKP_AddAutofillChoice("White Items",0);
-	WebDKP_AddAutofillChoice("Green Items",1);
-	WebDKP_AddAutofillChoice("Blue Items",2);
-	WebDKP_AddAutofillChoice("Purple Items",3);
-	WebDKP_AddAutofillChoice("Orange Items",4);
+	WebDKP_AddAutofillChoice("Graue Items",-1);
+	WebDKP_AddAutofillChoice("Weiße Items",0);
+	WebDKP_AddAutofillChoice("Grüne Items",1);
+	WebDKP_AddAutofillChoice("Blaue Items",2);
+	WebDKP_AddAutofillChoice("Lila Items",3);
+	WebDKP_AddAutofillChoice("Orangene Items",4);
 	
 	UIDropDownMenu_SetWidth(130, WebDKP_Options_FrameAutofillDropDown);
 end

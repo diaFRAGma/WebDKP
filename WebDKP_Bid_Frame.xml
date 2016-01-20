@@ -123,7 +123,7 @@
             </Anchor>
           </Anchors>
         </Texture>
-        <FontString name="$parentTitle" inherits="GameFontNormal" text="WebDKP Bidding">
+        <FontString name="$parentTitle" inherits="GameFontNormal" text="WebDKP Gebote">
           <Anchors>
             <Anchor point="TOP" relativeTo="$parentHeaderTexture">
               <Offset>
@@ -187,7 +187,7 @@
         </Anchors>
         <Layers>
           <Layer level="ARTWORK">
-            <FontString inherits="GameFontNormal" text="Bid Time:">
+            <FontString inherits="GameFontNormal" text="Zeit:">
               <Anchors>
                 <Anchor point="TOPLEFT" >
                   <Offset>
@@ -196,7 +196,7 @@
                 </Anchor>
               </Anchors>
             </FontString>
-            <FontString inherits="GameFontNormal" text="(in seconds - use 0 for no limit)">
+            <FontString inherits="GameFontNormal" text="zum bieten in Sek. (0 = unbegrenzt)">
               <Anchors>
                 <Anchor point="TOPLEFT" >
                   <Offset>
@@ -220,7 +220,7 @@
         </Scripts>
       </EditBox>
       <!-- START / STOP BIDDING BUTTON-->
-      <Button name="$parentBidButton" inherits="OptionsButtonTemplate" text="Start the Bidding!">
+      <Button name="$parentBidButton" inherits="OptionsButtonTemplate" text="Bieten starten">
         <Anchors>
           <Anchor point="TOP" relativePoint="TOP">
             <Offset>
@@ -229,7 +229,7 @@
           </Anchor>
         </Anchors>
         <Size>
-          <AbsDimension x="150" y="25"/>
+          <AbsDimension x="120" y="25"/>
         </Size>
         <Scripts>
           <OnClick>
@@ -264,7 +264,7 @@
             </FontString>
           </Layer>
           <Layer level="ARTWORK">
-            <FontString inherits="GameFontNormal" text="Recieved Bids:">
+            <FontString inherits="GameFontNormal" text="Eingegangene Gebote:">
               <Anchors>
                 <Anchor point="TOPLEFT" >
                   <Offset>
@@ -292,7 +292,7 @@
         </Size>
         <Layers>
           <Layer level="OVERLAY">
-            <FontString inherits="GameFontNormal" text="Bid">
+            <FontString inherits="GameFontNormal" text="Gebot">
               <Anchors>
                 <Anchor point="LEFT">
                   <Offset>
@@ -348,7 +348,7 @@
         </Size>
         <Layers>
           <Layer level="OVERLAY">
-            <FontString inherits="GameFontNormal" text="DKP - Bid">
+            <FontString inherits="GameFontNormal" text="Differenz">
               <Anchors>
                 <Anchor point="LEFT">
                   <Offset>
@@ -496,7 +496,7 @@
         <HighlightTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Highlight" alphaMode="ADD"/>
       </Button>
 
-      <Button name="$parentAward" inherits="OptionsButtonTemplate" text="Award Item To Player">
+      <Button name="$parentAward" inherits="OptionsButtonTemplate" text="Item an Spieler geben">
         <Anchors>
           <Anchor point="BOTTOM" relativePoint="BOTTOM" relativeTo="$parent">
             <Offset>
@@ -505,7 +505,7 @@
           </Anchor>
         </Anchors>
         <Size>
-          <AbsDimension x="150" y="25"/>
+          <AbsDimension x="160" y="25"/>
         </Size>
         <Scripts>
           <OnClick>

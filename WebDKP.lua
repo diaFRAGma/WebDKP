@@ -740,8 +740,8 @@ end
 -- Adds buttons to the minimap drop down
 -- ================================
 function WebDKP_MinimapDropDown_Initialize()
-	WebDKP_Add_MinimapDropDownItem("DKP Table",WebDKP_ToggleGUI);
-	WebDKP_Add_MinimapDropDownItem("Bidding",WebDKP_Bid_ToggleUI);
+	WebDKP_Add_MinimapDropDownItem("DKP Tabelle",WebDKP_ToggleGUI);
+	WebDKP_Add_MinimapDropDownItem("Gebote",WebDKP_Bid_ToggleUI);
 	--WebDKP_Add_MinimapDropDownItem("Help",WebDKP_ToggleGUI);
 end
 

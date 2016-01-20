@@ -269,39 +269,38 @@ function WebDKP_Bid_Event()
 	if(WebDKP_IsBidChat(name,trigger)) then
 		local cmd, subcmd = WebDKP_GetCmd(trigger);
 		cmd, subcmd = WebDKP_GetCommaCmd(subcmd);
-
-	
+			
 		-- SOMEONE HAS PLACED A BID
-		if(string.find(string.lower(trigger), "!bid")==1 ) then	
+		if(string.find(string.lower(trigger), "#biete")==1 ) then	
 			if(WebDKP_bidInProgress == false) then
-				WebDKP_SendWhisper(name,"There is no bid in progress");
+				WebDKP_SendWhisper(name,"Momentan kann für kein Item geboten werden.");
 			elseif(cmd == "") then
-				WebDKP_SendWhisper(name,"You did not specify a bid amount - bid not accepted");
+				WebDKP_SendWhisper(name,"Du hast keine DKP geboten. Gebot NICHT akzeptiert.");
 			else
 				WebDKP_Bid_HandleBid(name,cmd);
-				WebDKP_SendWhisper(name,"Bid for "..cmd.." dkp accepted");
+				WebDKP_SendWhisper(name,"Gebot für "..cmd.." DKP akzeptiert.");
 			end	
 			
 			
 		-- THEY WANT THE BIDDING TO START
-		elseif(string.find(string.lower(trigger), "!startbid")==1 ) then
+		elseif(string.find(string.lower(trigger), "#startebieten")==1 ) then
 		
 			if (WebDKP_bidInProgress == true ) then
-				WebDKP_SendWhisper(name,"There is already a bid in progress - you can't start another bid until the first one is finished");
+				WebDKP_SendWhisper(name,"Es wird bereits für ein Item geboten. - Du kannst kein weiteres Gebot starten solange noch eins läuft.");
 			elseif ( cmd == "" or cmd == nil) then
-				WebDKP_SendWhisper(name,"You must specify an item to bid on. Example: !startbid [Giantstalker's Helm]");
+				WebDKP_SendWhisper(name,"Du musst ein Item angeben auf das geboten werden soll. Beispiel: #startebieten [Blutfanghose]");
 			else	
 				WebDKP_Bid_StartBid(cmd,subcmd);
-				WebDKP_BidFrameBidButton:SetText("Stop Bidding");
+				WebDKP_BidFrameBidButton:SetText("Bieten beenden");
 			end
 				
 		-- THEY WANT THE BIDDING TO STOP	
-		elseif(string.find(string.lower(trigger), "!stopbid")==1 ) then
+		elseif(string.find(string.lower(trigger), "#stoppebieten")==1 ) then
 			if (WebDKP_bidInProgress == false ) then
-				WebDKP_SendWhisper(name,"There is no bid in progress for you to cancel");
+				WebDKP_SendWhisper(name,"Es läuft gerade kein Gebot, das gestoppt werden könnte.");
 			else
 				WebDKP_Bid_StopBid();
-				WebDKP_BidFrameBidButton:SetText("Start the Bidding!");
+				WebDKP_BidFrameBidButton:SetText("Bieten starten");
 			end
 		end
 	end
@@ -313,9 +312,9 @@ end
 -- towards web dkp bidding
 -- ================================
 function WebDKP_IsBidChat(name, trigger)
-	if ( string.find(string.lower(trigger), "!bid" )== 1 or
-		 string.find(string.lower(trigger), "!startbid" ) == 1 or 
-		 string.find(string.lower(trigger), "!stopbid" ) == 1
+	if ( string.find(string.lower(trigger), "#biete" )== 1 or
+		 string.find(string.lower(trigger), "#startebieten" ) == 1 or 
+		 string.find(string.lower(trigger), "#stoppebieten" ) == 1
 		) then
         return true
     end
@@ -326,7 +325,7 @@ end
 -- Triggers Bidding to Start
 -- ================================
 function WebDKP_Bid_StartBid(item, time)
-	WebDKP_BidFrameBidButton:SetText("Stop Bidding");
+	WebDKP_BidFrameBidButton:SetText("Bieten beenden");
 
 	WebDKP_BidList = {};
 	if (time == "" or time == nil or time=="0" or time==" ") then
@@ -362,7 +361,7 @@ function WebDKP_Bid_StopBid()
 	WebDKP_Bid_UpdateFrame:Hide();								-- stop any countdowns
 	WebDKP_BidFrame_Countdown:SetText("");
 	
-	WebDKP_BidFrameBidButton:SetText("Start the Bidding!");		-- fix the button text
+	WebDKP_BidFrameBidButton:SetText("Bieten starten");			-- fix the button text
 	local bidder, bid = WebDKP_Bid_GetHighestBid();				-- find highest bidder (not used any more)
 	WebDKP_AnnounceBidEnd(WebDKP_bidItem, bidder, bid);			-- make the announcement
 	WebDKP_bidInProgress = false;								
@@ -502,16 +501,16 @@ function WebDKP_Bid_OnUpdate(elapsed)
 		-- decrement the count down
 		WebDKP_bidCountdown = WebDKP_bidCountdown - 1;
 		--WebDKP_Print(WebDKP_bidCountdown);
-		WebDKP_BidFrame_Countdown:SetText("Time Left: "..WebDKP_bidCountdown.."s");
+		WebDKP_BidFrame_Countdown:SetText("Verbleibende Zeit: "..WebDKP_bidCountdown.."s");
 		
 		
 		if ( WebDKP_bidCountdown == 30 ) then				-- 30 seconds left
 			local _,_,link = WebDKP_GetItemInfo(WebDKP_bidItem); 
-			WebDKP_SendAnnouncementDefault("30 seconds remain for bidding on "..link.."!");
+			WebDKP_SendAnnouncementDefault("30 Sekunden noch zum bieten für "..link.."!");
 		
 		elseif ( WebDKP_bidCountdown == 10 ) then				-- 10 seconds left
 			local _,_,link = WebDKP_GetItemInfo(WebDKP_bidItem); 
-			WebDKP_SendAnnouncementDefault("10 seconds remain for bidding on "..link.."!");
+			WebDKP_SendAnnouncementDefault("10 Sekunden noch zum bieten für "..link.."!");
 			
 		elseif ( WebDKP_bidCountdown <= 0 ) then			-- countdown reached 0
 

@@ -79,9 +79,19 @@ function WebDKP_UpdateTable()
 			local playerName = entries[index][1];
 			line:Show();
 			nameText:SetText(entries[index][1]);
+			-- Klassenbezeichnungen werden ins deutsche übersetzt
+			if entries[index][2] == "Druid" then entries[index][2] = "Druide" end
+			if entries[index][2] == "Hunter" then entries[index][2] = "Jäger" end
+			if entries[index][2] == "Mage" then entries[index][2] = "Magier" end
+			if entries[index][2] == "Rogue" then entries[index][2] = "Schurke" end
+			if entries[index][2] == "Shaman" then entries[index][2] = "Schamane" end
+			if entries[index][2] == "Paladin" then entries[index][2] = "Paladin" end
+			if entries[index][2] == "Priest" then entries[index][2] = "Priester" end
+			if entries[index][2] == "Warrior" then entries[index][2] = "Krieger" end
+			if entries[index][2] == "Warlock" then entries[index][2] = "Hexenmeister" end
 			classText:SetText(entries[index][2]);
 			dkpText:SetText(entries[index][3]);
-			tierText:SetText(entries[index][4]);
+			--tierText:SetText(entries[index][4]);
 			-- kill the background of this line if it is not selected
 			if( not WebDKP_DkpTable[playerName]["Selected"] ) then
 				getglobal("WebDKP_FrameLine" .. i .. "Background"):SetVertexColor(0, 0, 0, 0);

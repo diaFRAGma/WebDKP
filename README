@@ -1,0 +1,21 @@
+World of Warcraft 1.12.1 Addon zur DKP-Verwaltung
+
+Hauptsächlich wurde das Addon nur ins deutsche übersetzt.
+Die Befehle wurden aber nicht nur eingedeutscht sonder auch von ! in # geändert, damit sie nicht mit einem Admin-Befehl vom Server verwechselt werden.
+
+TODO:
+- Gebote nur per Raidchat zulassen. Momentan kann auch per whisper geboten werden.
+- Befehl für den Gebotsstart verkürzen. #startebieten [Item] ist zu lang. #s
+- Wenn ein Itemlink als Loot vergeben wird, dann erscheint diser so in der Tabelle. Hier sollte nur der Itemname erscheinen.
+- Autofill Funktion testen.
+
+Erledigt:
+- Tier Spalte entfernen.
+- Klassenbezeichnungen in der Tabelle eindeutschen
+
+Nützliche Links:
+World of Warcraft 1.12.1 API
+http://vanilla-wow.wikia.com/wiki/World_of_Warcraft_API
+http://www.wowwiki.com/index.php?title=World_of_Warcraft_API&oldid=281620
+Programming in Lua
+http://www.lua.org/pil/contents.html

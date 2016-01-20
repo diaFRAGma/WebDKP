@@ -77,7 +77,7 @@
           <Anchors>
             <Anchor point="LEFT">
               <Offset>
-                <AbsDimension x="0" y="0"/>
+                <AbsDimension x="8" y="0"/>
               </Offset>
             </Anchor>
           </Anchors>
@@ -86,7 +86,7 @@
           <Anchors>
             <Anchor point="LEFT">
               <Offset>
-                <AbsDimension x="120" y="0"/>
+                <AbsDimension x="128" y="0"/>
               </Offset>
             </Anchor>
           </Anchors>
@@ -95,12 +95,12 @@
           <Anchors>
             <Anchor point="LEFT">
               <Offset>
-                <AbsDimension x="200" y="0"/>
+                <AbsDimension x="210" y="0"/>
               </Offset>
             </Anchor>
           </Anchors>
         </FontString>
-        <FontString name="$parentTier" inherits="ChatFontNormal" text="">
+        <!--<FontString name="$parentTier" inherits="ChatFontNormal" text="">
           <Anchors>
             <Anchor point="LEFT">
               <Offset>
@@ -108,7 +108,7 @@
               </Offset>
             </Anchor>
           </Anchors>
-        </FontString>
+        </FontString>-->
       </Layer>
     </Layers>
     <Scripts>
@@ -204,7 +204,7 @@
     <Layers>
       <Layer level="OVERLAY">
         <!-- DKP TABLE TITLE -->
-        <FontString name="WebDKP_Header" inherits="GameFontNormalLarge" text="DKP Table:">
+        <FontString name="WebDKP_Header" inherits="GameFontNormalLarge" text="DKP Tabelle:">
           <Anchors>
             <Anchor point="TOPLEFT" >
               <Offset>
@@ -291,7 +291,7 @@
           </Anchor>
         </Anchors>
         <Size>
-          <AbsDimension x="70" y="24"/>
+          <AbsDimension x="82" y="24"/>
         </Size>
         <Scripts>
           <OnClick>
@@ -301,7 +301,7 @@
         </Scripts>
         <Layers>
           <Layer level="OVERLAY">
-            <FontString inherits="GameFontNormal" text="Class">
+            <FontString inherits="GameFontNormal" text="Klasse">
               <Anchors>
                 <Anchor point="LEFT">
                   <Offset>
@@ -322,7 +322,7 @@
           </Anchor>
         </Anchors>
         <Size>
-          <AbsDimension x="70" y="24"/>
+          <AbsDimension x="102" y="24"/>
         </Size>
         <Scripts>
           <OnClick>
@@ -344,7 +344,7 @@
           </Layer>
         </Layers>
       </Button>
-      <Button name="$parentTier" inherits="WebDKP_LogTabTemplate">
+      <!--<Button name="$parentTier" inherits="WebDKP_LogTabTemplate">
         <Anchors>
           <Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeTo="$parentDKP">
             <Offset>
@@ -374,7 +374,7 @@
             </FontString>
           </Layer>
         </Layers>
-      </Button>
+      </Button>-->
       <!-- DKP TABLE SCROLL FRAME -->
       <ScrollFrame name="$parentScrollFrame" inherits="FauxScrollFrameTemplate" hidden="false">
         <Size>
@@ -554,7 +554,7 @@
       </Frame>
       
       <!-- Select All Button -->
-      <Button name="$parentSelectAll" inherits="OptionsButtonTemplate" text="Select All">
+      <Button name="$parentSelectAll" inherits="OptionsButtonTemplate" text="Alle auswählen">
         <Anchors>
           <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT">
             <Offset>
@@ -563,7 +563,7 @@
           </Anchor>
         </Anchors>
         <Size>
-          <AbsDimension x="120" y="25"/>
+          <AbsDimension x="140" y="25"/>
         </Size>
         <Scripts>
           <OnClick>
@@ -572,7 +572,7 @@
         </Scripts>
       </Button>
       <!-- Deselect All Button-->
-      <Button name="$parentDeselectAll" inherits="OptionsButtonTemplate" text="Deselect All">
+      <Button name="$parentDeselectAll" inherits="OptionsButtonTemplate" text="Alle abwählen">
         <Anchors>
           <Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeTo="$parentSelectAll">
             <Offset>
@@ -581,7 +581,7 @@
           </Anchor>
         </Anchors>
         <Size>
-          <AbsDimension x="120" y="25"/>
+          <AbsDimension x="140" y="25"/>
         </Size>
         <Scripts>
           <OnClick>
@@ -591,7 +591,7 @@
       </Button>
 
       <!-- Save Log Button -->
-      <Button name="$parentSaveLog" inherits="OptionsButtonTemplate" text="Save Log File">
+      <Button name="$parentSaveLog" inherits="OptionsButtonTemplate" text="Log speichern">
         <Anchors>
           <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT">
             <Offset>
@@ -600,7 +600,7 @@
           </Anchor>
         </Anchors>
         <Size>
-          <AbsDimension x="120" y="25"/>
+          <AbsDimension x="140" y="25"/>
         </Size>
         <Scripts>
           <OnClick> ReloadUI(); </OnClick>
@@ -608,7 +608,7 @@
       </Button>
 
       <!-- Refresh Button -->
-      <Button name="$parentRefresh" inherits="OptionsButtonTemplate" text="Refresh Group">
+      <Button name="$parentRefresh" inherits="OptionsButtonTemplate" text="Liste aktualisieren">
         <Anchors>
           <Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeTo="$parentSaveLog">
             <Offset>
@@ -617,7 +617,7 @@
           </Anchor>
         </Anchors>
         <Size>
-          <AbsDimension x="120" y="25"/>
+          <AbsDimension x="140" y="25"/>
         </Size>
         <Scripts>
           <OnClick>
@@ -653,7 +653,7 @@
         </Backdrop>
         <Layers>
           <Layer level="OVERLAY">
-            <FontString name="WebDKP_Header" inherits="GameFontNormalLarge" text="Filters:">
+            <FontString name="WebDKP_Header" inherits="GameFontNormalLarge" text="Filter:">
               <Anchors>
                 <Anchor point="TOPLEFT" >
                   <Offset>
@@ -676,7 +676,7 @@
             </Anchors>
             <Layers>
               <Layer level="OVERLAY">
-                <FontString inherits="GameFontNormal" text="Druid">
+                <FontString inherits="GameFontNormal" text="Druide">
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
@@ -703,7 +703,7 @@
             </Anchors>
             <Layers>
               <Layer level="OVERLAY">
-                <FontString inherits="GameFontNormal" text="Hunter">
+                <FontString inherits="GameFontNormal" text="Jäger">
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
@@ -730,7 +730,7 @@
             </Anchors>
             <Layers>
               <Layer level="OVERLAY">
-                <FontString inherits="GameFontNormal" text="Mage">
+                <FontString inherits="GameFontNormal" text="Magier">
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
@@ -757,7 +757,7 @@
             </Anchors>
             <Layers>
               <Layer level="OVERLAY">
-                <FontString inherits="GameFontNormal" text="Rogue">
+                <FontString inherits="GameFontNormal" text="Schurke">
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
@@ -784,7 +784,7 @@
             </Anchors>
             <Layers>
               <Layer level="OVERLAY">
-                <FontString inherits="GameFontNormal" text="Shaman">
+                <FontString inherits="GameFontNormal" text="Schamane">
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
@@ -838,7 +838,7 @@
             </Anchors>
             <Layers>
               <Layer level="OVERLAY">
-                <FontString inherits="GameFontNormal" text="Priest">
+                <FontString inherits="GameFontNormal" text="Priester">
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
@@ -865,7 +865,7 @@
             </Anchors>
             <Layers>
               <Layer level="OVERLAY">
-                <FontString inherits="GameFontNormal" text="Warrior">
+                <FontString inherits="GameFontNormal" text="Krieger">
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
@@ -892,7 +892,7 @@
             </Anchors>
             <Layers>
               <Layer level="OVERLAY">
-                <FontString inherits="GameFontNormal" text="Warlock">
+                <FontString inherits="GameFontNormal" text="Hexenmeister">
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
@@ -910,7 +910,7 @@
             </Scripts>
           </CheckButton>
           <!-- Check / Uncheck all Buttons-->
-          <Button name="$parentCheckAll" inherits="OptionsButtonTemplate" text="Check All">
+          <Button name="$parentCheckAll" inherits="OptionsButtonTemplate" text="Alle auswählen">
             <Anchors>
               <Anchor point="TOPLEFT" relativePoint="BottomLeft" relativeTo="$parentClassWarlock">
                 <Offset>
@@ -918,13 +918,16 @@
                 </Offset>
               </Anchor>
             </Anchors>
+			<Size>
+             <AbsDimension x="120" y="25"/>
+            </Size>
             <Scripts>
               <OnClick>
                 WebDKP_CheckAllFilters();
               </OnClick>
             </Scripts>
           </Button>
-          <Button name="$parentUncheckAll" inherits="OptionsButtonTemplate" text="Uncheck All">
+          <Button name="$parentUncheckAll" inherits="OptionsButtonTemplate" text="Alle abwählen">
             <Anchors>
               <Anchor point="TOPLEFT" relativePoint="BottomLeft" relativeTo="$parentCheckAll">
                 <Offset>
@@ -932,6 +935,9 @@
                 </Offset>
               </Anchor>
             </Anchors>
+			<Size>
+             <AbsDimension x="120" y="25"/>
+            </Size>
             <Scripts>
               <OnClick>
                 WebDKP_UncheckAllFilters();
@@ -949,7 +955,7 @@
             </Anchors>
             <Layers>
               <Layer level="OVERLAY">
-                <FontString inherits="GameFontNormal" text="Only show players in current group">
+                <FontString inherits="GameFontNormal" text="Nur Spieler der Gruppe/Raid anzeigen">
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
@@ -997,7 +1003,7 @@
         </Backdrop>
         <Layers>
           <Layer level="OVERLAY">
-            <FontString name="WebDKP_Header" inherits="GameFontNormalLarge" text="Award DKP:">
+            <FontString name="WebDKP_Header" inherits="GameFontNormalLarge" text="DKP vergeben:">
               <Anchors>
                 <Anchor point="TOPLEFT" >
                   <Offset>
@@ -1006,7 +1012,7 @@
                 </Anchor>
               </Anchors>
             </FontString>
-            <FontString name="$parentInfo1" inherits="GameFontNormal" text="Select recieving players on left and enter">
+            <FontString name="$parentInfo1" inherits="GameFontNormal" text="Wähle links die Spieler aus, die DKP">
               <Anchors>
                 <Anchor point="TOPLEFT" >
                   <Offset>
@@ -1015,7 +1021,7 @@
                 </Anchor>
               </Anchors>
             </FontString>
-            <FontString name="$parentInfo2" inherits="GameFontNormal" text="award information below.">
+            <FontString name="$parentInfo2" inherits="GameFontNormal" text="gutgeschrieben bekommen sollen.">
               <Anchors>
                 <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentInfo1" >
                   <Offset>
@@ -1041,7 +1047,7 @@
             </Anchors>
             <Layers>
               <Layer level="ARTWORK">
-                <FontString inherits="GameFontNormal" text="Reason:">
+                <FontString inherits="GameFontNormal" text="Grund:">
                   <Anchors>
                     <Anchor point="TOPLEFT" >
                       <Offset>
@@ -1072,7 +1078,7 @@
             </Anchors>
             <Layers>
               <Layer level="ARTWORK">
-                <FontString inherits="GameFontNormal" text="Points: (Use negative # to deduct points)">
+                <FontString inherits="GameFontNormal" text="Punkte: (Negative Zahl um Punkte abzuziehen)">
                   <Anchors>
                     <Anchor point="TOPLEFT" >
                       <Offset>
@@ -1085,7 +1091,7 @@
             </Layers>
           </EditBox>
           <!-- Award Item Button-->
-          <Button name="$parentAwardPoints" inherits="OptionsButtonTemplate" text="Award DKP">
+          <Button name="$parentAwardPoints" inherits="OptionsButtonTemplate" text="DKP vergeben">
             <Anchors>
               <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentPoints">
                 <Offset>
@@ -1133,7 +1139,7 @@
         </Backdrop>
         <Layers>
           <Layer level="OVERLAY">
-            <FontString name="WebDKP_Header" inherits="GameFontNormalLarge" text="Award Item:">
+            <FontString name="WebDKP_Header" inherits="GameFontNormalLarge" text="Item vergeben:">
               <Anchors>
                 <Anchor point="TOPLEFT" >
                   <Offset>
@@ -1142,7 +1148,7 @@
                 </Anchor>
               </Anchors>
             </FontString>
-            <FontString name="$parentInfo1" inherits="GameFontNormal" text="Select recieving player from table on left">
+            <FontString name="$parentInfo1" inherits="GameFontNormal" text="Wähle links den Spieler aus, der das Item">
               <Anchors>
                 <Anchor point="TOPLEFT" >
                   <Offset>
@@ -1151,7 +1157,7 @@
                 </Anchor>
               </Anchors>
             </FontString>
-            <FontString name="$parentInfo2" inherits="GameFontNormal" text="and enter item information below.">
+            <FontString name="$parentInfo2" inherits="GameFontNormal" text="erhalten soll.">
               <Anchors>
                 <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentInfo1" >
                   <Offset>
@@ -1208,7 +1214,7 @@
             </Anchors>
             <Layers>
               <Layer level="ARTWORK">
-                <FontString inherits="GameFontNormal" text="Item Cost: (Positive numbers only)">
+                <FontString inherits="GameFontNormal" text="Item Kosten: (nur positive Zahlen)">
                   <Anchors>
                     <Anchor point="TOPLEFT" >
                       <Offset>
@@ -1221,7 +1227,7 @@
             </Layers>
           </EditBox>
           <!-- Award Item Button-->
-          <Button name="$parentAwardItem" inherits="OptionsButtonTemplate" text="Award Item">
+          <Button name="$parentAwardItem" inherits="OptionsButtonTemplate" text="Item vergeben">
             <Anchors>
               <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentItemCost">
                 <Offset>
@@ -1270,7 +1276,7 @@
         <!-- Options Header-->
         <Layers>
           <Layer level="OVERLAY">
-            <FontString name="WebDKP_Header" inherits="GameFontNormalLarge" text="Options:">
+            <FontString name="WebDKP_Header" inherits="GameFontNormalLarge" text="Einstellungen:">
               <Anchors>
                 <Anchor point="TOPLEFT" >
                   <Offset>
@@ -1279,7 +1285,7 @@
                 </Anchor>
               </Anchors>
             </FontString>
-            <FontString name="$parentInfo1" inherits="GameFontNormal" text="Autofill Item Details From Drops:">
+            <FontString name="$parentInfo1" inherits="GameFontNormal" text="Autobefüllen der Item Details von Drops:">
               <Anchors>
                 <Anchor point="TOPLEFT" >
                   <Offset>
@@ -1288,7 +1294,7 @@
                 </Anchor>
               </Anchors>
             </FontString>
-            <FontString name="$parentInfo2" inherits="GameFontNormal" text="ZeroSum DKP Settings">
+            <FontString name="$parentInfo2" inherits="GameFontNormal" text="ZeroSum DKP Einstellungen">
               <Anchors>
                 <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentInfo1">
                   <Offset>
@@ -1311,7 +1317,7 @@
             </Anchors>
             <Layers>
               <Layer level="OVERLAY">
-                <FontString inherits="GameFontNormal" text="Autofill Enabled:">
+                <FontString inherits="GameFontNormal" text="Autobefüllung:">
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
@@ -1348,7 +1354,7 @@
             </Scripts>
             <Layers>
               <Layer level="ARTWORK">
-                <FontString inherits="GameFontNormal" text="Autofill Threshold:">
+                <FontString inherits="GameFontNormal" text="Autobef. Schwelle:">
                   <Anchors>
                     <Anchor point="LEFT" >
                       <Offset>
@@ -1371,7 +1377,7 @@
             </Anchors>
             <Layers>
               <Layer level="OVERLAY">
-                <FontString inherits="GameFontNormal" text="AutoAward Enabled:">
+                <FontString inherits="GameFontNormal" text="AutoVergabe:">
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
@@ -1399,7 +1405,7 @@
             </Anchors>
             <Layers>
               <Layer level="OVERLAY">
-                <FontString inherits="GameFontNormal" text="ZeroSum Enabled:">
+                <FontString inherits="GameFontNormal" text="ZeroSum nutzen:">
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
@@ -1419,7 +1425,7 @@
         </Frames>
       </Frame>
       <!-- Tab Button: DKP Filters -->
-      <Button name="$parentTab1" inherits="WebDKP_TabTemplate" id="1" text="Filters">
+      <Button name="$parentTab1" inherits="WebDKP_TabTemplate" id="1" text="Filter">
         <Anchors>
           <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="WebDKP_FiltersFrame">
             <Offset>
@@ -1429,7 +1435,7 @@
         </Anchors>
       </Button>
       <!-- Tab Button: Award DKP -->
-      <Button name="$parentTab2" inherits="WebDKP_TabTemplate" id="2" text="Award DKP">
+      <Button name="$parentTab2" inherits="WebDKP_TabTemplate" id="2" text="DKP verg.">
         <Anchors>
           <Anchor point="LEFT" relativeTo="$parentTab1" relativePoint="RIGHT">
             <Offset>
@@ -1439,7 +1445,7 @@
         </Anchors>
       </Button>
       <!-- Tab Button: Award Item -->
-      <Button name="$parentTab3" inherits="WebDKP_TabTemplate" id="3" text="Award Item">
+      <Button name="$parentTab3" inherits="WebDKP_TabTemplate" id="3" text="Item verg.">
         <Anchors>
           <Anchor point="LEFT" relativeTo="$parentTab2" relativePoint="RIGHT">
             <Offset>
@@ -1449,7 +1455,7 @@
         </Anchors>
       </Button>
       <!-- Tab Button: Options -->
-      <Button name="$parentTab4" inherits="WebDKP_TabTemplate" id="4" text="Options">
+      <Button name="$parentTab4" inherits="WebDKP_TabTemplate" id="4" text="Einstellungen">
         <Anchors>
           <Anchor point="LEFT" relativeTo="$parentTab3" relativePoint="RIGHT">
             <Offset>
