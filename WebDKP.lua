@@ -167,8 +167,14 @@ end
 function WebDKP_OnEvent()
 	if(event=="CHAT_MSG_WHISPER") then
 		WebDKP_CHAT_MSG_WHISPER();
-	elseif(event=="CHAT_MSG_PARTY" or event=="CHAT_MSG_RAID" or event=="CHAT_MSG_RAID_LEADER" or event=="CHAT_MSG_RAID_WARNING") then
-		WebDKP_CHAT_MSG_PARTY_RAID();
+	elseif(event=="CHAT_MSG_PARTY") then
+		WebDKP_CHAT_MSG_PARTY()
+	elseif(event=="CHAT_MSG_RAID") then
+		WebDKP_CHAT_MSG_RAID()
+	elseif(event=="CHAT_MSG_RAID_LEADER") then
+		WebDKP_CHAT_MSG_RAID_LEADER()
+	elseif(event=="CHAT_MSG_RAID_WARNING") then
+		WebDKP_CHAT_MSG_RAID_WARNING()
 	elseif(event=="PARTY_MEMBERS_CHANGED") then
 		WebDKP_PARTY_MEMBERS_CHANGED();
 	elseif(event=="RAID_ROSTER_UPDATE") then
@@ -283,15 +289,35 @@ end
 -- ================================
 function WebDKP_CHAT_MSG_WHISPER()
 	WebDKP_WhisperDKP_Event();
+	--WebDKP_Bid_Event();
+end
+
+-- ================================
+-- Event handler for party chat messages.
+-- ================================
+function WebDKP_CHAT_MSG_PARTY()
+	--WebDKP_Bid_Event();
+end
+
+-- ================================
+-- Event handler for raid chat messages.
+-- ================================
+function WebDKP_CHAT_MSG_RAID()
 	WebDKP_Bid_Event();
 end
 
 -- ================================
--- Event handler for all party and raid
--- chat messages. 
+-- Event handler for raid leader chat messages.
 -- ================================
-function WebDKP_CHAT_MSG_PARTY_RAID()
+function WebDKP_CHAT_MSG_RAID_LEADER()
 	WebDKP_Bid_Event();
+end
+
+-- ================================
+-- Event handler for raid warning chat messages.
+-- ================================
+function WebDKP_CHAT_MSG_RAID_WARNING()
+	--WebDKP_Bid_Event();
 end
 
 ---------------------------------------------------

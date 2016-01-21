@@ -5,13 +5,14 @@ World of Warcraft 1.12.1 Addon zur DKP-Verwaltung
 - Alle Tier Ausgaben wurden entfernt. (whisper #liste #listealle und #dkp und aus der Tabelle im Addon selbst)
 - In der Tabelle werden nun Klassenfarben genutzt um schneller erkennen zu können welcher Spieler welche Klasse ist.
 - Der Befehl für ein Gebotsstart ist nun #s [Item] um es für den raidleader so einfach wie möglich zu halten.
+- Gebote sind nur noch öffentlich über den raid chat erlaubt. Whispers und Gruppen Nachrichten werden nicht mehr akzeptiert.
 
 TODO:
-- Gebote nur per Raidchat zulassen. Momentan kann auch per whisper oder gruppenchat geboten werden.
 - Wenn ein Itemlink als Loot vergeben wird, dann erscheint diser so in der Tabelle. Hier sollte nur der Itemname erscheinen.
 - Autofill Funktion testen.
 - Eventuell die Gilde auslesen und anzeigen. Kann leider beim Sync nicht übertragen werden. Aber zumindest im Raid könnte man es sich evtl. anzeigen lassen.
 - Die Optionen für die Position an der Minimap und andere Einstellungen in einer eigenen SavedVariable speichern, damit die Daten beim Synchronisieren nicht immer verloren gehen.
+- In den Optionen auswählbar machen welcher Kanal zum bieten gentzt werden soll (raid chat, whisper, raid warnung). Code ist dafür vorbereitet.
 
 Nützliche Links:
 World of Warcraft 1.12.1 API

@@ -80,23 +80,24 @@ function WebDKP_UpdateTable()
 			line:Show();
 			nameText:SetText(entries[index][1]);
 			-- Klassenbezeichnungen werden ins deutsche übersetzt
-			if entries[index][2] == "Druid" then
+			nameText:SetVertexColor(0.50,0.50,0.50)
+			if entries[index][2] == "Druid" or entries[index][2] == "Druide" then
 				nameText:SetVertexColor(1.00,0.49,0.04)
 				entries[index][2] = "Druide"
 			end
-			if entries[index][2] == "Hunter" then
+			if entries[index][2] == "Hunter" or entries[index][2] == "Jäger" then
 				nameText:SetVertexColor(0.67,0.83,0.45)
 				entries[index][2] = "Jäger"
 			end
-			if entries[index][2] == "Mage" then
+			if entries[index][2] == "Mage" or entries[index][2] == "Magier" then
 				nameText:SetVertexColor(0.41,0.80,0.94)
 				entries[index][2] = "Magier"
 			end
-			if entries[index][2] == "Rogue" then
+			if entries[index][2] == "Rogue" or entries[index][2] == "Schurke" then
 				nameText:SetVertexColor(1.00,0.96,0.41)
 				entries[index][2] = "Schurke"
 			end
-			if entries[index][2] == "Shaman" then
+			if entries[index][2] == "Shaman" or entries[index][2] == "Schamane" then
 				nameText:SetVertexColor(0.00,0.44,0.87)
 				entries[index][2] = "Schamane"
 			end
@@ -104,15 +105,15 @@ function WebDKP_UpdateTable()
 				nameText:SetVertexColor(0.96,0.55,0.73)
 				entries[index][2] = "Paladin"
 			end
-			if entries[index][2] == "Priest" then
+			if entries[index][2] == "Priest" or entries[index][2] == "Priester" then
 				nameText:SetVertexColor(1.00,1.00,1.00)
 				entries[index][2] = "Priester"
 			end
-			if entries[index][2] == "Warrior" then
+			if entries[index][2] == "Warrior" or entries[index][2] == "Krieger" then
 				nameText:SetVertexColor(0.78,0.61,0.43)
 				entries[index][2] = "Krieger" 
 			end
-			if entries[index][2] == "Warlock" then
+			if entries[index][2] == "Warlock" or entries[index][2] == "Hexenmeister" then
 				nameText:SetVertexColor(0.58,0.51,0.79)
 				entries[index][2] = "Hexenmeister" 
 			end
