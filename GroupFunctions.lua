@@ -294,7 +294,18 @@ end
 -- on the table by checking it against current filters
 -- ================================
 function WebDKP_ShouldDisplay(name, class, dkp, tier)
+	if class == "Druide" then class = "Druid" end
+	if class == "Jäger" then class = "Hunter" end
+	if class == "Magier" then class = "Mage" end
+	if class == "Schurke" then class = "Rogue" end
+	if class == "Schamane" then class = "Shaman" end
+	if class == "Priester" then class = "Priest" end
+	if class == "Krieger" then class = "Warrior" end
+	if class == "Hexenmeister" then class = "Warlock" end
 	if (name == "Unknown") then
+		return false;
+	end
+	if (name == "Unbekannt") then
 		return false;
 	end
 	if (WebDKP_Filters[class] == 0) then

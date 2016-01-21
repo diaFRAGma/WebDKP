@@ -34,7 +34,6 @@ Anpassungen:
 - Der Minimap Button kann nun frei positioniert werden und ist nicht mehr an die Minimap gebunden.
 
 TODO:
-- Spieler die ingame der Tabelle hinzugfügt wurden bekommen zwar ihre korrekte Klasse zugeteilt, können aber nicht über den Klassenfilter gefiltert werden.
 - In den Optionen auswählbar machen welcher Kanal zum bieten genutzt werden soll (raid chat, whisper, raid warnung). Code ist dafür vorbereitet.
 - Möglichkeit finden um WebDKP_ItemChatClick in WebDKP.lua aufrufen zu können. Damit man per Shift+Klick Itemlinks einfügen kann. (überlegen in welchem addon es per shift+click möglich ist item links einzufügen)
 
