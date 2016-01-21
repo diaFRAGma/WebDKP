@@ -218,6 +218,9 @@ function WebDKP_UpdatePlayersInGroup()
 	if ( numberInRaid > 0 ) then
 		-- Yes! Load raid data...
 		local name, class, guild;
+		
+		--guildName, guildRankName, guildRankIndex = GetGuildInfo(unit)
+		
 		for i=1, numberInRaid do
 			name, _, _, _, class, _, _, _ , _ = GetRaidRosterInfo(i);
 			WebDKP_PlayersInGroup[i]=

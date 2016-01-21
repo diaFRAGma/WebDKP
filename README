@@ -37,7 +37,6 @@ TODO:
 - In den Optionen auswählbar machen welcher Kanal zum bieten genutzt werden soll (raid chat, whisper, raid warnung). Code ist dafür vorbereitet.
 - Eventuell die Gilde auslesen und anzeigen. Kann leider beim Sync nicht übertragen werden. Aber zumindest im Raid könnte man es sich evtl. anzeigen lassen.
 - Möglichkeit finden um WebDKP_ItemChatClick in WebDKP.lua aufrufen zu können. Damit man per Shift+Klick Itemlinks einfügen kann. (überlegen in welchem addon es per shift+click möglich ist item links einzufügen)
-- Prüfen ob jemand anders ein gebot per #s starten kann.
 
 Known Issues:
 - Autobefüllen der Items funktioniert nicht. Dazu müsste zum einen AutoFill.lua überarbeitet werden, dass diese mit dem deutschen Client klar kommt. Außerdem müsste eine Loottable hinterlegt werden in der für jedes einem ein fester Preis bestimmt wird.
