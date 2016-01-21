@@ -1,5 +1,27 @@
 World of Warcraft 1.12.1 Addon zur DKP-Verwaltung
 
+Befehlsübersicht:
+#dkp
+Gibt einem seinen eigenen aktuellen DKP Stand aus.
+
+#liste <Filter>
+Gibt einem die Liste aller momentan in der Gruppe/Raid befindlichen Spieler und deren aktuellen DKP aus.
+Über <Filter> kann die Liste nach bestimmten Klasen gefiltert werden. #liste Jäger Schurke gibt z.B. alle Jäger und Schurken aus.
+
+#listealle <Filter>
+Gibt einem die Liste aller im DKP befindlichen Spieler und deren aktuelle DKP aus.
+Über <Filter> kann die Liste nach bestimmten Klasen gefiltert werden. #liste Jäger Schurke gibt z.B. alle Jäger und Schurken aus.
+
+#s <Item>
+Startet ein Gebot. Auf das mitgegebene Item kann dann geboten werden. <Item> darf auch ein Itemlink sein.
+
+#stoppebieten
+Das Gebot wird beendet und niemand kann mehr auf das Item bieten was angeboten wurde.
+
+#biete <Wert>
+Für das momentan angebotene Item bieten. Über <Wert> wird bestimmt wieviel DKP man für das Item bieten möchte.
+
+Anpassungen:
 - Das Addon wurde komplett ins deutsche übersetzt.
 - Die Befehle wurden von ! in # geändert, damit sie vom Server nicht mit einem Admin-Befehl verwechselt werden.
 - Alle Tier Ausgaben wurden entfernt. (whisper #liste #listealle und #dkp und aus der Tabelle im Addon selbst)
@@ -8,14 +30,19 @@ World of Warcraft 1.12.1 Addon zur DKP-Verwaltung
 - Gebote sind nur noch öffentlich über den raid chat erlaubt. Whispers und Gruppen Nachrichten werden nicht mehr akzeptiert.
 - Itemlinks werden nun nicht mehr vollständig in die Datenbank übernommen sondern nur noch der Name des Items.
 - Items und Award Reasons werden nun für die Website aufbereitet. Umlaute werden in html Format &xuml; gewandelt.
+- Die Default-Position des Minimap-Buttons ist nun nicht mehr oben an der Minimap sondern unten links.
+- Der Minimap Button kann nun frei positioniert werden und ist nicht mehr an die Minimap gebunden.
 
 TODO:
-- Möglichkeit finden um WebDKP_ItemChatClick in WebDKP.lua aufrufen zu können. Damit man per Shift+Klick Itemlinks einfügen kann. (überlegen in welchem addon es per shift+click möglich ist item links einzufügen)
-- Autofill Funktion testen.
-- Gucken obs ein Kontextmenü im Raidfenster gibt.
+- In den Optionen auswählbar machen welcher Kanal zum bieten genutzt werden soll (raid chat, whisper, raid warnung). Code ist dafür vorbereitet.
 - Eventuell die Gilde auslesen und anzeigen. Kann leider beim Sync nicht übertragen werden. Aber zumindest im Raid könnte man es sich evtl. anzeigen lassen.
-- Per Default Optionen die Position vom Button an der Minimap anders positionieren.
-- In den Optionen auswählbar machen welcher Kanal zum bieten gentzt werden soll (raid chat, whisper, raid warnung). Code ist dafür vorbereitet.
+- Möglichkeit finden um WebDKP_ItemChatClick in WebDKP.lua aufrufen zu können. Damit man per Shift+Klick Itemlinks einfügen kann. (überlegen in welchem addon es per shift+click möglich ist item links einzufügen)
+- Prüfen ob jemand anders ein gebot per #s starten kann.
+
+Known Issues:
+- Autobefüllen der Items funktioniert nicht. Dazu müsste zum einen AutoFill.lua überarbeitet werden, dass diese mit dem deutschen Client klar kommt. Außerdem müsste eine Loottable hinterlegt werden in der für jedes einem ein fester Preis bestimmt wird.
+- Wenn ein Spieler ingame hinzugefügt wird und zur Website synchonisiert wird, dann fehlen Klassen und Gildendaten. Wird leider auch nicht erkannt wenn die Egnlischen Klassenbezeichnungen übergeben werden. Da müsste man wissen was der Parser der Seite erwartet.
+- Wenn die Daten von der Website gezogen werden, verliert man seine Einstellungen. Lässt sich nicht verhindern, da WoW es nicht zulässt für ein Addon in unterschiedliche Dateien seine SavedVariables zu schreiben.
 
 Nützliche Links:
 World of Warcraft 1.12.1 API

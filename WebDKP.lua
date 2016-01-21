@@ -97,11 +97,13 @@ WebDKP_LogSort = {
 
 -- Additional user options
 WebDKP_Options = {
-	["AutofillEnabled"] = 1,		-- auto fill data. 0 = disabled. 1 = enabled. 
+	["AutofillEnabled"] = 0,		-- auto fill data. 0 = disabled. 1 = enabled. 
 	["AutofillThreshold"] = 2,		-- What level of items should be picked up by auto fill. -1 = Gray, 4 = Orange
-	["AutoAwardEnabled"] = 1,		-- Whether dkp awards should be recorded automatically if all data can be auto filled (user is still prompted)
+	["AutoAwardEnabled"] = 0,		-- Whether dkp awards should be recorded automatically if all data can be auto filled (user is still prompted)
 	["SelectedTableId"] = 1,		-- The last table that was being looked at
-	["MiniMapButtonAngle"] = 1,
+	--["MiniMapButtonAngle"] = 1,
+	["MiniMapButtonPositionX"] = -67.84618063153107,
+	["MiniMapButtonPositionY"] = -43.39881708444011,
 }
 
 -- User options that are syncronized with the website
@@ -220,7 +222,8 @@ function WebDKP_ADDON_LOADED()
 	WebDKP_UpdateTable();       --update the gui
 	
 	-- set the mini map position
-	WebDKP_MinimapButton_SetPositionAngle(WebDKP_Options["MiniMapButtonAngle"]);
+	--WebDKP_MinimapButton_SetPositionAngle(WebDKP_Options["MiniMapButtonAngle"]);
+	WebDKP_MinimapButton_SetPosition(WebDKP_Options["MiniMapButtonPositionX"], WebDKP_Options["MiniMapButtonPositionY"])
 end
 
 
@@ -667,11 +670,12 @@ function WebDKP_MinimapButton_UpdateDragPosition()
 	
 	-- Calculate the angle
 	
-	local	vAngle = math.atan2(vCenterX, vCenterY);
+	--local	vAngle = math.atan2(vCenterX, vCenterY);
 	
 	-- Set the new position
 	
-	WebDKP_MinimapButton_SetPositionAngle(vAngle);
+	--WebDKP_MinimapButton_SetPositionAngle(vAngle);
+	WebDKP_MinimapButton_SetPosition(vCenterX, vCenterY)
 end
 
 -- ================================
@@ -701,47 +705,57 @@ function WebDKP_RestrictAngle(pAngle, pRestrictStart, pRestrictEnd)
 	end
 end
 
+
+-- ================================
+-- Sets the free position of the mini map button.
+-- ================================
+function WebDKP_MinimapButton_SetPosition(positionX, positionY)
+	WebDKP_MinimapButton:SetPoint("CENTER", "Minimap", "CENTER", positionX, positionY);
+	WebDKP_Options["MiniMapButtonPositionX"] = positionX;
+	WebDKP_Options["MiniMapButtonPositionY"] = positionY;
+end
+
 -- ================================
 -- Sets the position of the mini map button based on the passed angle. 
 -- Restricts the button from appear over any of the default ui buttons. 
 -- ================================
-function WebDKP_MinimapButton_SetPositionAngle(pAngle)
-	local	vAngle = pAngle;
+--function WebDKP_MinimapButton_SetPositionAngle(pAngle)
+	--local	vAngle = pAngle;
 	
 	-- Restrict the angle from going over the date/time icon or the zoom in/out icons
 	
-	local	vRestrictedStartAngle = nil;
-	local	vRestrictedEndAngle = nil;
+	--local	vRestrictedStartAngle = nil;
+	--local	vRestrictedEndAngle = nil;
 	
-	if GameTimeFrame:IsVisible() then
-		if MinimapZoomIn:IsVisible()
-		or MinimapZoomOut:IsVisible() then
-			vAngle = WebDKP_RestrictAngle(vAngle, 0.4302272732931596, 2.930420793963121);
-		else
-			vAngle = WebDKP_RestrictAngle(vAngle, 0.4302272732931596, 1.720531504573905);
-		end
+	--if GameTimeFrame:IsVisible() then
+		--if MinimapZoomIn:IsVisible()
+		--or MinimapZoomOut:IsVisible() then
+			--vAngle = WebDKP_RestrictAngle(vAngle, 0.4302272732931596, 2.930420793963121);
+		--else
+			--vAngle = WebDKP_RestrictAngle(vAngle, 0.4302272732931596, 1.720531504573905);
+		--end
 		
-	elseif MinimapZoomIn:IsVisible()
-	or MinimapZoomOut:IsVisible() then
-		vAngle = WebDKP_RestrictAngle(vAngle, 1.720531504573905, 2.930420793963121);
-	end
+	--elseif MinimapZoomIn:IsVisible()
+	--or MinimapZoomOut:IsVisible() then
+		--vAngle = WebDKP_RestrictAngle(vAngle, 1.720531504573905, 2.930420793963121);
+	--end
 	
 	-- Restrict it from the tracking icon area
 	
-	vAngle = WebDKP_RestrictAngle(vAngle, -1.290357134304173, -0.4918423429923585);
+	--vAngle = WebDKP_RestrictAngle(vAngle, -1.290357134304173, -0.4918423429923585);
 	
 	--
 	
-	local	vRadius = 80;
+	--local	vRadius = 80;
 	
-	vCenterX = math.sin(vAngle) * vRadius;
-	vCenterY = math.cos(vAngle) * vRadius;
+	--vCenterX = math.sin(vAngle) * vRadius;
+	--vCenterY = math.cos(vAngle) * vRadius;
 	
-	WebDKP_MinimapButton:SetPoint("CENTER", "Minimap", "CENTER", vCenterX - 1, vCenterY - 1);
+	--WebDKP_MinimapButton:SetPoint("CENTER", "Minimap", "CENTER", vCenterX - 1, vCenterY - 1);
 	
-	WebDKP_Options["MiniMapButtonAngle"] = vAngle;
+	--WebDKP_Options["MiniMapButtonAngle"] = vAngle;
 	--gOutfitter_Settings.Options.MinimapButtonAngle = vAngle;
-end
+--end
 
 -- ================================
 -- Event handler for the update frame. Updates the minimap button
