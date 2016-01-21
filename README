@@ -1,20 +1,17 @@
 World of Warcraft 1.12.1 Addon zur DKP-Verwaltung
 
-Hauptsächlich wurde das Addon nur ins deutsche übersetzt.
-Die Befehle wurden aber nicht nur eingedeutscht sonder auch von ! in # geändert, damit sie nicht mit einem Admin-Befehl vom Server verwechselt werden.
+- Das Addon wurde komplett ins deutsche übersetzt.
+- Die Befehle wurden von ! in # geändert, damit sie vom Server nicht mit einem Admin-Befehl verwechselt werden.
+- Alle Tier Ausgaben wurden entfernt. (whisper #liste #listealle und #dkp und aus der Tabelle im Addon selbst)
+- In der Tabelle werden nun Klassenfarben genutzt um schneller erkennen zu können welcher Spieler welche Klasse ist.
+- Der Befehl für ein Gebotsstart ist nun #s [Item] um es für den raidleader so einfach wie möglich zu halten.
 
 TODO:
-- Gebote nur per Raidchat zulassen. Momentan kann auch per whisper geboten werden.
+- Gebote nur per Raidchat zulassen. Momentan kann auch per whisper oder gruppenchat geboten werden.
 - Wenn ein Itemlink als Loot vergeben wird, dann erscheint diser so in der Tabelle. Hier sollte nur der Itemname erscheinen.
 - Autofill Funktion testen.
 - Eventuell die Gilde auslesen und anzeigen. Kann leider beim Sync nicht übertragen werden. Aber zumindest im Raid könnte man es sich evtl. anzeigen lassen.
 - Die Optionen für die Position an der Minimap und andere Einstellungen in einer eigenen SavedVariable speichern, damit die Daten beim Synchronisieren nicht immer verloren gehen.
-
-Erledigt:
-- Tier Spalte entfernen.
-- Klassenbezeichnungen in der Tabelle eindeutschen
-- Befehl für den Gebotsstart verkürzen. #startebieten [Item] ist zu lang. #s
-- Klassenfarben in der Tabelle nutzen.
 
 Nützliche Links:
 World of Warcraft 1.12.1 API
