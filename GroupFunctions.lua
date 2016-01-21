@@ -217,10 +217,7 @@ function WebDKP_UpdatePlayersInGroup()
 	-- Is a raid going?
 	if ( numberInRaid > 0 ) then
 		-- Yes! Load raid data...
-		local name, class, guild;
-		
-		--guildName, guildRankName, guildRankIndex = GetGuildInfo(unit)
-		
+		local name, class		
 		for i=1, numberInRaid do
 			name, _, _, _, class, _, _, _ , _ = GetRaidRosterInfo(i);
 			WebDKP_PlayersInGroup[i]=
@@ -232,7 +229,7 @@ function WebDKP_UpdatePlayersInGroup()
 	-- Is a party going?
 	elseif ( numberInRaid == 0 and numberInParty>0) then
 		-- Yes! Load party data instead...
-		local name, class, guild, playerHandle;
+		local name, class, playerHandle
 		for i=1, numberInParty do
 			playerHandle = "party"..i;
 			name = UnitName(playerHandle);

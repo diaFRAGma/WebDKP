@@ -102,8 +102,8 @@ WebDKP_Options = {
 	["AutoAwardEnabled"] = 0,		-- Whether dkp awards should be recorded automatically if all data can be auto filled (user is still prompted)
 	["SelectedTableId"] = 1,		-- The last table that was being looked at
 	--["MiniMapButtonAngle"] = 1,
-	["MiniMapButtonPositionX"] = -67.84618063153107,
-	["MiniMapButtonPositionY"] = -43.39881708444011,
+	["MiniMapButtonPositionX"] = -22.7779692221427,
+	["MiniMapButtonPositionY"] = -101.6666511120445,
 }
 
 -- User options that are syncronized with the website
