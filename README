@@ -7,10 +7,12 @@ World of Warcraft 1.12.1 Addon zur DKP-Verwaltung
 - Der Befehl für ein Gebotsstart ist nun #s [Item] um es für den raidleader so einfach wie möglich zu halten.
 - Gebote sind nur noch öffentlich über den raid chat erlaubt. Whispers und Gruppen Nachrichten werden nicht mehr akzeptiert.
 - Itemlinks werden nun nicht mehr vollständig in die Datenbank übernommen sondern nur noch der Name des Items.
+- Items und Award Reasons werden nun für die Website aufbereitet. Umlaute werden in html Format &xuml; gewandelt.
 
 TODO:
-- Items mit Umlauten werden auf der Website unschön dargestellt. Das lässt sich evtl. durch &xuml; (html) oder \195\164 (wow) fixen.
+- Möglichkeit finden um WebDKP_ItemChatClick in WebDKP.lua aufrufen zu können. Damit man per Shift+Klick Itemlinks einfügen kann. (überlegen in welchem addon es per shift+click möglich ist item links einzufügen)
 - Autofill Funktion testen.
+- Gucken obs ein Kontextmenü im Raidfenster gibt.
 - Eventuell die Gilde auslesen und anzeigen. Kann leider beim Sync nicht übertragen werden. Aber zumindest im Raid könnte man es sich evtl. anzeigen lassen.
 - Per Default Optionen die Position vom Button an der Minimap anders positionieren.
 - In den Optionen auswählbar machen welcher Kanal zum bieten gentzt werden soll (raid chat, whisper, raid warnung). Code ist dafür vorbereitet.

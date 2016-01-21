@@ -96,6 +96,17 @@ function WebDKP_AddDKP(points, reason, forItem, players)
 	local tableid = WebDKP_GetTableid();
 	local awardedBy = UnitName("player");
 	
+	-- Umlaute und Sonderzeichen werden html konform umgewandelt,
+	-- damit sie auf der Website in der History ordentlich dargestellt
+	-- werden können.
+	reason = string.gsub(reason, "Ä", "&Auml;")
+	reason = string.gsub(reason, "ä", "&auml;")
+	reason = string.gsub(reason, "Ö", "&Ouml;")
+	reason = string.gsub(reason, "ö", "&ouml;")
+	reason = string.gsub(reason, "Ü", "&Uuml;")
+	reason = string.gsub(reason, "ü", "&uuml;")
+	reason = string.gsub(reason, "ß", "&szlig;")
+	
 	if (not WebDKP_Log) then
 		WebDKP_Log = {};
 	end
