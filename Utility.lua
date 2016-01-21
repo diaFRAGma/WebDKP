@@ -126,14 +126,14 @@ end
 -- Returns: color, item name, itemLink
 -- ================================
 function WebDKP_GetItemInfo(sItem)
-	local itemName, itemLink, itemRarity, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, invTexture = GetItemInfo(sItem);
-	if ( itemRarity and itemName and itemLink ) then
-		return itemRarity, itemName, itemLink;
+	-- Thanks to Telo for the following regular expression
+	local iStart, iEnd, sColor, sItemName, sName = string.find(sItem, "|c(%x+)|Hitem:(%d+:%d+:%d+:%d+)|h%[(.-)%]|h|r");
+	if sColor and sItemName and sName then
+		return sColor, sName, sItem
 	else
-		return 0, sItem, sItem;
+		return 0, sItem, sItem
 	end
 end
-
 
 -- ================================
 -- Selects a single specified player in the table. 

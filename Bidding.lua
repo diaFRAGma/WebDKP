@@ -333,8 +333,8 @@ function WebDKP_Bid_StartBid(item, time)
 	end
 	
 	local quality, itemName, itemLink = WebDKP_GetItemInfo(item);
-	WebDKP_bidItem = itemName;
-	WebDKP_BidFrameItem:SetText(itemName);
+	WebDKP_bidItem = itemLink
+	WebDKP_BidFrameItem:SetText(itemLink);
 	WebDKP_BidFrameTime:SetText(time);
 	
 	WebDKP_AnnounceBidStart(itemLink, time);
@@ -357,7 +357,6 @@ end
 -- Stops the current bidding
 -- ================================
 function WebDKP_Bid_StopBid()
-	
 	WebDKP_Bid_UpdateFrame:Hide();								-- stop any countdowns
 	WebDKP_BidFrame_Countdown:SetText("");
 	
@@ -445,7 +444,8 @@ function WebDKP_Bid_AwardSelected()
 					["class"] = WebDKP_GetPlayerClass(player),
 				}};
 		--award the item
-		WebDKP_AddDKP(points, WebDKP_bidItem, "true", playerTable)
+		local quality, itemName, itemLink = WebDKP_GetItemInfo(WebDKP_bidItem);
+		WebDKP_AddDKP(points, itemName, "true", playerTable)
 		WebDKP_AnnounceAwardItem(points, WebDKP_bidItem, player);
 		-- Update the table so we can see the new dkp status
 		WebDKP_UpdateTableToShow();

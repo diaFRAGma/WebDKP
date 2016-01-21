@@ -132,8 +132,6 @@ end
 -- Accepts itemname, name of highest bidder, bid dkp
 -- ================================
 function WebDKP_AnnounceBidEnd(item, name, dkp)
-	
-
 	if(name == nil or name == "") then
 		name = "noone";
 		dkp = 0;

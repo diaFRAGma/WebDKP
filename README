@@ -6,12 +6,13 @@ World of Warcraft 1.12.1 Addon zur DKP-Verwaltung
 - In der Tabelle werden nun Klassenfarben genutzt um schneller erkennen zu können welcher Spieler welche Klasse ist.
 - Der Befehl für ein Gebotsstart ist nun #s [Item] um es für den raidleader so einfach wie möglich zu halten.
 - Gebote sind nur noch öffentlich über den raid chat erlaubt. Whispers und Gruppen Nachrichten werden nicht mehr akzeptiert.
+- Itemlinks werden nun nicht mehr vollständig in die Datenbank übernommen sondern nur noch der Name des Items.
 
 TODO:
-- Wenn ein Itemlink als Loot vergeben wird, dann erscheint diser so in der Tabelle. Hier sollte nur der Itemname erscheinen.
+- Items mit Umlauten werden auf der Website unschön dargestellt. Das lässt sich evtl. durch &xuml; (html) oder \195\164 (wow) fixen.
 - Autofill Funktion testen.
 - Eventuell die Gilde auslesen und anzeigen. Kann leider beim Sync nicht übertragen werden. Aber zumindest im Raid könnte man es sich evtl. anzeigen lassen.
-- Die Optionen für die Position an der Minimap und andere Einstellungen in einer eigenen SavedVariable speichern, damit die Daten beim Synchronisieren nicht immer verloren gehen.
+- Per Default Optionen die Position vom Button an der Minimap anders positionieren.
 - In den Optionen auswählbar machen welcher Kanal zum bieten gentzt werden soll (raid chat, whisper, raid warnung). Code ist dafür vorbereitet.
 
 Nützliche Links:

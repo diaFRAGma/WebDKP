@@ -17,13 +17,14 @@ function WebDKP_AwardItem_Event()
 	local name, class, guild;
 	local cost = WebDKP_AwardItem_FrameItemCost:GetText();
 	local item = WebDKP_AwardItem_FrameItemName:GetText();
+
 	if ( item == nil or item=="" ) then
-		WebDKP_Print("You must enter an item name.");
+		WebDKP_Print("Du musst einen Item Namen eingeben.");
 		PlaySound("igQuestFailed");
 		return;
 	end
 	if ( cost == nil or cost=="") then
-		WebDKP_Print("You must enter a cost for the item.");
+		WebDKP_Print("Du musst einen Wert für das Item eingeben.");
 		PlaySound("igQuestFailed");
 		return;
 	end
@@ -34,7 +35,7 @@ function WebDKP_AwardItem_Event()
 	local player = WebDKP_GetSelectedPlayers(1);
 	
 	if ( player == nil ) then
-		WebDKP_Print("No player was selected to award. Award NOT made.");
+		WebDKP_Print("Es wurde kein Spieler ausgewählt. Vergabe wurde nicht durchgeführt.");
 		PlaySound("igQuestFailed");
 	else
 		WebDKP_AddDKP(points, item, "true", player)
@@ -60,7 +61,7 @@ function WebDKP_AwardDKP_Event()
 	local reason = WebDKP_AwardDKP_FrameReason:GetText();
 
 	if ( points == nil or points=="") then
-		WebDKP_Print("You must enter DKP points to award.");
+		WebDKP_Print("Du musst angeben wieviel DKP vergeben werden sollen.");
 		PlaySound("igQuestFailed");
 		return;
 	end
@@ -69,7 +70,7 @@ function WebDKP_AwardDKP_Event()
 	local players = WebDKP_GetSelectedPlayers(0);
 	
 	if ( players == nil ) then
-		WebDKP_Print("No players were selected. Award NOT made.");
+		WebDKP_Print("Es wurde kein Spieler ausgewählt. Vergabe wurde nicht durchgeführt.");
 		PlaySound("igQuestFailed");
 	else 
 		WebDKP_AddDKP(points, reason, "false", players)
