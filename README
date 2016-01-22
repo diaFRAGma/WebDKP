@@ -34,14 +34,12 @@ Anpassungen:
 - Der Minimap Button kann nun frei positioniert werden und ist nicht mehr an die Minimap gebunden.
 - In den Einstellungen kann man nun konfigurieren über welche Channels Gebote abgegeben werden dürfen.
 
-TODO:
-- Möglichkeit finden um WebDKP_ItemChatClick in WebDKP.lua aufrufen zu können. Damit man per Shift+Klick Itemlinks einfügen kann. (überlegen in welchem addon es per shift+click möglich ist item links einzufügen)
-
 Known Issues:
 - Autobefüllen der Items funktioniert nicht. Dazu müsste zum einen AutoFill.lua überarbeitet werden, dass diese mit dem deutschen Client klar kommt. Außerdem müsste eine Loottable hinterlegt werden in der für jedes einem ein fester Preis bestimmt wird.
 - Wenn ein Spieler ingame hinzugefügt wird und zur Website synchonisiert wird, dann fehlen Klassen und Gildendaten. Wird leider auch nicht erkannt wenn die Egnlischen Klassenbezeichnungen übergeben werden. Da müsste man wissen was der Parser der Seite erwartet.
 - Wenn die Daten von der Website gezogen werden, verliert man seine Einstellungen. Lässt sich nicht verhindern, da WoW es nicht zulässt für ein Addon in unterschiedliche Dateien seine SavedVariables zu schreiben.
 - Die Gilden werden ingame nicht angezeigt. Werden aber leider auch von der Website nicht mit exportiert und können somit nicht angezeigt werden. Die ingame Möglichkeiten Gilden auszulesen sind sehr beschränkt und funktionieren nur bei Spielern, die sich in der Nähe befinden.
+- Item kann nicht per Shift+Klick in die Gebots-Maske eingefügt werden. Ab WoW 2.0 gibts die hooksecurefunc("SetItemRef",WebDKP_ItemChatClick) Funktion um dies zu ermöglichen. In Classic habe ich noch keine gefunden. Da es bei WIM in Classic auch noch nicht geht vermute ich, dass es noch keine Möglichkeit gibt.
 
 Nützliche Links:
 World of Warcraft 1.12.1 API
