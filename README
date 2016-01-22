@@ -32,9 +32,9 @@ Anpassungen:
 - Items und Award Reasons werden nun für die Website aufbereitet. Umlaute werden in html Format &xuml; gewandelt.
 - Die Default-Position des Minimap-Buttons ist nun nicht mehr oben an der Minimap sondern unten links.
 - Der Minimap Button kann nun frei positioniert werden und ist nicht mehr an die Minimap gebunden.
+- In den Einstellungen kann man nun konfigurieren über welche Channels Gebote abgegeben werden dürfen.
 
 TODO:
-- In den Optionen auswählbar machen welcher Kanal zum bieten genutzt werden soll (raid chat, whisper, raid warnung). Code ist dafür vorbereitet.
 - Möglichkeit finden um WebDKP_ItemChatClick in WebDKP.lua aufrufen zu können. Damit man per Shift+Klick Itemlinks einfügen kann. (überlegen in welchem addon es per shift+click möglich ist item links einzufügen)
 
 Known Issues:

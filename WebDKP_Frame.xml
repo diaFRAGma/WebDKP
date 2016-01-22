@@ -1303,6 +1303,15 @@
                 </Anchor>
               </Anchors>
             </FontString>
+			<FontString name="$parentInfo3" inherits="GameFontNormal" text="Channels in denen geboten werden darf:">
+              <Anchors>
+                <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentInfo2">
+                  <Offset>
+                    <AbsDimension x="0" y="-30"/>
+                  </Offset>
+                </Anchor>
+              </Anchors>
+            </FontString>
           </Layer>
         </Layers>
         <Frames>
@@ -1311,7 +1320,7 @@
             <Anchors>
               <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentInfo1">
                 <Offset>
-                  <AbsDimension x="145" y="0" />
+                  <AbsDimension x="165" y="0" />
                 </Offset>
               </Anchor>
             </Anchors>
@@ -1321,7 +1330,7 @@
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
-                        <AbsDimension x="-120" y="2"/>
+                        <AbsDimension x="-140" y="2"/>
                       </Offset>
                     </Anchor>
                   </Anchors>
@@ -1343,7 +1352,7 @@
             <Anchors>
               <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentToggleAutofill">
                 <Offset>
-                  <AbsDimension x="-15" y="0"/>
+                  <AbsDimension x="-35" y="0"/>
                 </Offset>
               </Anchor>
             </Anchors>
@@ -1371,7 +1380,7 @@
             <Anchors>
               <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentAutofillDropDown">
                 <Offset>
-                  <AbsDimension x="14" y="2" />
+                  <AbsDimension x="34" y="2" />
                 </Offset>
               </Anchor>
             </Anchors>
@@ -1381,7 +1390,7 @@
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
-                        <AbsDimension x="-120" y="2"/>
+                        <AbsDimension x="-140" y="2"/>
                       </Offset>
                     </Anchor>
                   </Anchors>
@@ -1399,7 +1408,7 @@
             <Anchors>
               <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentInfo2">
                 <Offset>
-                  <AbsDimension x="145" y="0" />
+                  <AbsDimension x="165" y="0" />
                 </Offset>
               </Anchor>
             </Anchors>
@@ -1409,7 +1418,7 @@
                   <Anchors>
                     <Anchor point="LEFT">
                       <Offset>
-                        <AbsDimension x="-120" y="2"/>
+                        <AbsDimension x="-140" y="2"/>
                       </Offset>
                     </Anchor>
                   </Anchors>
@@ -1422,8 +1431,148 @@
               </OnClick>
             </Scripts>
           </CheckButton>
+          <!-- Whisper Channel Checkbox-->
+          <CheckButton name="$parentToggleWhisper" inherits="OptionsCheckButtonTemplate" checked="false">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentInfo3">
+                <Offset>
+                  <AbsDimension x="165" y="0" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer level="OVERLAY">
+                <FontString inherits="GameFontNormal" text="Flüstern:">
+                  <Anchors>
+                    <Anchor point="LEFT">
+                      <Offset>
+                        <AbsDimension x="-140" y="2"/>
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnClick>
+                WebDKP_ToggleWhisper();
+              </OnClick>
+            </Scripts>
+          </CheckButton>
+          <!-- Party Channel Checkbox-->
+          <CheckButton name="$parentToggleParty" inherits="OptionsCheckButtonTemplate" checked="false">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentInfo3">
+                <Offset>
+                  <AbsDimension x="165" y="-25" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer level="OVERLAY">
+                <FontString inherits="GameFontNormal" text="Gruppe:">
+                  <Anchors>
+                    <Anchor point="LEFT">
+                      <Offset>
+                        <AbsDimension x="-140" y="2"/>
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnClick>
+                WebDKP_ToggleParty();
+              </OnClick>
+            </Scripts>
+          </CheckButton>
+          <!-- Raid Channel Checkbox-->
+          <CheckButton name="$parentToggleRaid" inherits="OptionsCheckButtonTemplate" checked="true">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentInfo3">
+                <Offset>
+                  <AbsDimension x="165" y="-50" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer level="OVERLAY">
+                <FontString inherits="GameFontNormal" text="Schlachtzug:">
+                  <Anchors>
+                    <Anchor point="LEFT">
+                      <Offset>
+                        <AbsDimension x="-140" y="2"/>
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnClick>
+                WebDKP_ToggleRaid();
+              </OnClick>
+            </Scripts>
+          </CheckButton>
+          <!-- Raid Leader Channel Checkbox-->
+          <CheckButton name="$parentToggleRaidLeader" inherits="OptionsCheckButtonTemplate" checked="true">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentInfo3">
+                <Offset>
+                  <AbsDimension x="165" y="-75" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer level="OVERLAY">
+                <FontString inherits="GameFontNormal" text="Schlachtzugsleiter:">
+                  <Anchors>
+                    <Anchor point="LEFT">
+                      <Offset>
+                        <AbsDimension x="-140" y="2"/>
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnClick>
+                WebDKP_ToggleRaidLeader();
+              </OnClick>
+            </Scripts>
+          </CheckButton>
+          <!-- Raid Warning Channel Checkbox-->
+          <CheckButton name="$parentToggleRaidWarning" inherits="OptionsCheckButtonTemplate" checked="false">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentInfo3">
+                <Offset>
+                  <AbsDimension x="165" y="-100" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer level="OVERLAY">
+                <FontString inherits="GameFontNormal" text="Schlachtzugswarnung:">
+                  <Anchors>
+                    <Anchor point="LEFT">
+                      <Offset>
+                        <AbsDimension x="-140" y="2"/>
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnClick>
+                WebDKP_ToggleRaidWarning();
+              </OnClick>
+            </Scripts>
+          </CheckButton>
         </Frames>
-      </Frame>
+      </Frame>	  
       <!-- Tab Button: DKP Filters -->
       <Button name="$parentTab1" inherits="WebDKP_TabTemplate" id="1" text="Filter">
         <Anchors>

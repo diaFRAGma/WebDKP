@@ -104,6 +104,11 @@ WebDKP_Options = {
 	--["MiniMapButtonAngle"] = 1,
 	["MiniMapButtonPositionX"] = -22.7779692221427,
 	["MiniMapButtonPositionY"] = -101.6666511120445,
+	["WhisperEnabled"] = 0,
+	["PartyEnabled"] = 0,
+	["RaidEnabled"] = 1,
+	["RaidLeaderEnabled"] = 1,
+	["RaidWarningEnabled"] = 0,
 }
 
 -- User options that are syncronized with the website
@@ -216,7 +221,11 @@ function WebDKP_ADDON_LOADED()
 	
 	WebDKP_Options_FrameToggleAutoAward:SetChecked(WebDKP_Options["AutoAwardEnabled"]);
 	WebDKP_Options_FrameToggleZeroSum:SetChecked(WebDKP_WebOptions["ZeroSumEnabled"]);
-	
+	WebDKP_Options_FrameToggleWhisper:SetChecked(WebDKP_Options["WhisperEnabled"])
+	WebDKP_Options_FrameToggleParty:SetChecked(WebDKP_Options["PartyEnabled"])
+	WebDKP_Options_FrameToggleRaid:SetChecked(WebDKP_Options["RaidEnabled"])
+	WebDKP_Options_FrameToggleRaidLeader:SetChecked(WebDKP_Options["RaidLeaderEnabled"])
+	WebDKP_Options_FrameToggleRaidWarning:SetChecked(WebDKP_Options["RaidWarningEnabled"])	
 	
 	WebDKP_UpdateTableToShow(); --update who is in the table
 	WebDKP_UpdateTable();       --update the gui
@@ -292,35 +301,35 @@ end
 -- ================================
 function WebDKP_CHAT_MSG_WHISPER()
 	WebDKP_WhisperDKP_Event();
-	--WebDKP_Bid_Event();
+	if WebDKP_Options["WhisperEnabled"] == 1 then WebDKP_Bid_Event() end
 end
 
 -- ================================
 -- Event handler for party chat messages.
 -- ================================
 function WebDKP_CHAT_MSG_PARTY()
-	--WebDKP_Bid_Event();
+	if WebDKP_Options["PartyEnabled"] == 1 then WebDKP_Bid_Event() end
 end
 
 -- ================================
 -- Event handler for raid chat messages.
 -- ================================
 function WebDKP_CHAT_MSG_RAID()
-	WebDKP_Bid_Event();
+	if WebDKP_Options["RaidEnabled"] == 1 then WebDKP_Bid_Event() end
 end
 
 -- ================================
 -- Event handler for raid leader chat messages.
 -- ================================
 function WebDKP_CHAT_MSG_RAID_LEADER()
-	WebDKP_Bid_Event();
+	if WebDKP_Options["RaidLeaderEnabled"] == 1 then WebDKP_Bid_Event() end
 end
 
 -- ================================
 -- Event handler for raid warning chat messages.
 -- ================================
 function WebDKP_CHAT_MSG_RAID_WARNING()
-	--WebDKP_Bid_Event();
+	if WebDKP_Options["RaidWarningEnabled"] == 1 then WebDKP_Bid_Event() end
 end
 
 ---------------------------------------------------
@@ -600,6 +609,70 @@ function WebDKP_ToggleZeroSum()
 	end
 end
 
+-- ================================
+-- Toggles Whipser Channel for bidding.
+-- ================================
+function WebDKP_ToggleWhisper()
+	-- is enabled, disable it
+	if ( WebDKP_Options["WhisperEnabled"] == 1 ) then
+		WebDKP_Options["WhisperEnabled"] = 0;
+	-- is disabled, enable it
+	else
+		WebDKP_Options["WhisperEnabled"] = 1;
+	end
+end
+
+-- ================================
+-- Toggles Party Channel for bidding.
+-- ================================
+function WebDKP_ToggleParty()
+	-- is enabled, disable it
+	if ( WebDKP_Options["PartyEnabled"] == 1 ) then
+		WebDKP_Options["PartyEnabled"] = 0;
+	-- is disabled, enable it
+	else
+		WebDKP_Options["PartyEnabled"] = 1;
+	end
+end
+
+-- ================================
+-- Toggles Raid Channel for bidding.
+-- ================================
+function WebDKP_ToggleRaid()
+	-- is enabled, disable it
+	if ( WebDKP_Options["RaidEnabled"] == 1 ) then
+		WebDKP_Options["RaidEnabled"] = 0;
+	-- is disabled, enable it
+	else
+		WebDKP_Options["RaidEnabled"] = 1;
+	end
+end
+
+-- ================================
+-- Toggles Raid Leader Channel for bidding.
+-- ================================
+function WebDKP_ToggleRaidLeader()
+	-- is enabled, disable it
+	if ( WebDKP_Options["RaidLeaderEnabled"] == 1 ) then
+		WebDKP_Options["RaidLeaderEnabled"] = 0;
+	-- is disabled, enable it
+	else
+		WebDKP_Options["RaidLeaderEnabled"] = 1;
+	end
+end
+
+-- ================================
+-- Toggles Raid Warning Channel for bidding.
+-- ================================
+function WebDKP_ToggleRaidWarning()
+	-- is enabled, disable it
+	if ( WebDKP_Options["RaidWarningEnabled"] == 1 ) then
+		WebDKP_Options["RaidWarningEnabled"] = 0;
+	-- is disabled, enable it
+	else
+		WebDKP_Options["RaidWarningEnabled"] = 1;
+	end
+end
 
 -- ================================
 -- MiniMap Scrolling code. 
