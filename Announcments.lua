@@ -19,9 +19,9 @@ WebDKP_DkpAwardAll =		"WebDKP: Alle Spieler erhalten $dkp DKP für: $reason.";
 
 WebDKP_DkpAwardSome =		"WebDKP: Folgende Spieler bekommen $dkp DKP für: $reason.";
 
-WebDKP_BidStart =			"WebDKP: Bieten wurde gestartet für $item! $time " ..
-							"Um ein Gebot abzugeben schreibe #biete <Wert> im Raidchat."..
-							"(z.B.: #bietemain 5 f\195\188r deine Mainskillung und #bietesec 5 f\195\188r deine Sekund\195\164ren Skillungen)";
+WebDKP_BidStart =			"WebDKP: Das folgende Item $item steht zum gebot bereit. " ..
+							"Um ein Gebot abzugeben bitte im \"/raid # <Wert>\" schreiben. "..
+							"(z.B. /raid # 25";
 							
 WebDKP_BidEnd =				"WebDKP: Das Bieten für $item wurde beendet.";
 

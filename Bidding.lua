@@ -271,7 +271,7 @@ function WebDKP_Bid_Event()
 		cmd, subcmd = WebDKP_GetCommaCmd(subcmd);
 			
 		-- SOMEONE HAS PLACED A BID
-		if(string.find(string.lower(trigger), "#biete")==1 ) then	
+		if(string.find(string.lower(trigger), "# ")==1 ) then	
 			if(WebDKP_bidInProgress == false) then
 				WebDKP_SendWhisper(name,"Momentan kann für kein Item geboten werden.");
 			elseif(cmd == "") then
@@ -312,7 +312,7 @@ end
 -- towards web dkp bidding
 -- ================================
 function WebDKP_IsBidChat(name, trigger)
-	if ( string.find(string.lower(trigger), "#biete" )== 1 or
+	if ( string.find(string.lower(trigger), "# " )== 1 or
 		 string.find(string.lower(trigger), "#s" ) == 1 or 
 		 string.find(string.lower(trigger), "#stoppebieten" ) == 1
 		) then
